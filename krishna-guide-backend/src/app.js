@@ -20,6 +20,9 @@ app.use(cors());
 app.use(express.json());
 console.log("ENV KEY:", process.env.GEMINI_API_KEY);
 app.use("/api", askRoutes);
+app.get("/", (req, res) =>{
+  res.send("Welcome to Krishna Guide API");
+})
 console.log("API routes initialized");
 app.listen(3000, () => {
   console.log("Server running on port 3000");
